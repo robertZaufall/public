@@ -48,6 +48,7 @@ RETRY_INTERVAL=5
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
 export DOCKER_TAG="2019-CU10-ubuntu-20.04"
+export DESIRED_VERSION=$HELM_VERSION
 
 
 # Variables used for azdata cluster creation.
@@ -207,7 +208,6 @@ apt-get install -q -y kubelet=$KUBE_DPKG_VERSION kubeadm=$KUBE_DPKG_VERSION kube
 # Holding the version of kube packages.
 #
 apt-mark hold kubelet kubeadm kubectl
-export DESIRED_VERSION=${HELM_VERSION}
 curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
 
 . /etc/os-release
