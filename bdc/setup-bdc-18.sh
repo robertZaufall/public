@@ -47,7 +47,7 @@ RETRY_INTERVAL=5
 #
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
-export DOCKER_TAG="2019-CU10-ubuntu-18.04"
+export DOCKER_TAG="2019-CU9-ubuntu-18.04"
 export DESIRED_VERSION=$HELM_VERSION
 
 
