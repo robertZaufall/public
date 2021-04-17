@@ -34,8 +34,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Kube version.
 #
-KUBE_DPKG_VERSION=1.16.3-00
-KUBE_VERSION=1.16.3
+KUBE_DPKG_VERSION=1.16.15-00
+KUBE_VERSION=1.16.15
 HELM_VERSION=v2.17.0
 
 # Wait for 5 minutes for the cluster to be ready.
