@@ -1,12 +1,5 @@
  <!-- title: Zaufall_Robert_CV_2021 -->
 
-<style>
-td { vertical-align: top; font-size: 10pt !important; }
-th { white-space: nowrap; }
-body { font-family: Arial, Helvetica, sans-serif !important; }
-p { line-height: 5px !important; margin-block-start: 0px !important; margin-block-end: 0px !important; }
-</style>
-
 ![Robert Zaufall](https://www.zaufall.de/images/Zaufall%20Robert_small.png)
 
 <br/><br/>
