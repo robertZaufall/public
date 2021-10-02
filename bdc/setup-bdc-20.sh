@@ -34,9 +34,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Kube version.
 #
-KUBE_DPKG_VERSION=1.16.15-00
-KUBE_VERSION=1.16.15
-HELM_VERSION=v2.17.0
+KUBE_DPKG_VERSION=1.18.3-00
+KUBE_VERSION=1.18.3
 
 # Wait for 5 minutes for the cluster to be ready.
 #
@@ -48,8 +47,6 @@ RETRY_INTERVAL=5
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
 export DOCKER_TAG="2019-CU10-ubuntu-20.04"
-export DESIRED_VERSION=$HELM_VERSION
-
 
 # Variables used for azdata cluster creation.
 #
@@ -61,7 +58,7 @@ export STORAGE_CLASS=local-storage
 export PV_COUNT="30"
 
 IMAGES=(
-	    mssql-app-service-proxy
+	mssql-app-service-proxy
         mssql-control-watchdog
         mssql-controller
         mssql-dns
@@ -81,7 +78,7 @@ IMAGES=(
         mssql-server-controller
         mssql-server-data
         mssql-ha-operator
-	    mssql-ha-supervisor
+	mssql-ha-supervisor
         mssql-service-proxy
         mssql-ssis-app-runtime
 )
@@ -208,7 +205,7 @@ apt-get install -q -y kubelet=$KUBE_DPKG_VERSION kubeadm=$KUBE_DPKG_VERSION kube
 # Holding the version of kube packages.
 #
 apt-mark hold kubelet kubeadm kubectl
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3 | bash
 
 . /etc/os-release
 if [ "$UBUNTU_CODENAME" == "bionic" ]; then
