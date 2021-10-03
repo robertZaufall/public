@@ -338,6 +338,8 @@ echo "Big data cluster created."
 #
 kubectl config set-context --current --namespace $CLUSTER_NAME
 
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig
+
 # Login and get endpoint list for the cluster.
 #
 azdata login -n $CLUSTER_NAME
