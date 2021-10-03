@@ -252,7 +252,9 @@ mkdir -p $HOME/.kube
 mkdir -p /home/$SUDO_USER/.kube
 
 sudo cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig_1
 sudo chown $(id -u $SUDO_USER):$(id -g $SUDO_USER) $HOME/.kube/config
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig_2
 
 # To enable a single node cluster remove the taint that limits the first node to master only service.
 #
@@ -322,6 +324,8 @@ echo ""
 echo "############################################################################"
 echo "Starting to deploy azdata cluster..." 
 
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig_3
+
 # Command to create cluster for single node cluster.
 #
 azdata bdc config init --source kubeadm-dev-test  --target kubeadm-custom -f
@@ -334,11 +338,13 @@ azdata bdc config replace -c kubeadm-custom/control.json -j "spec.storage.logs.c
 azdata bdc create -c kubeadm-custom --accept-eula $ACCEPT_EULA
 echo "Big data cluster created." 
 
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig_4
+
 # Setting context to cluster.
 #
 kubectl config set-context --current --namespace $CLUSTER_NAME
 
-sudo cp -f $HOME/.kube/config $HOME/kubeconfig
+sudo cp -f $HOME/.kube/config $HOME/kubeconfig_5
 
 # Login and get endpoint list for the cluster.
 #
