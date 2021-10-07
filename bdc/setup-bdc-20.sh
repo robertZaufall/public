@@ -46,7 +46,7 @@ RETRY_INTERVAL=5
 #
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
-export DOCKER_TAG="2019-CU12-ubuntu-20.04"
+export DOCKER_TAG="2019-CU13-ubuntu-20.04"
 
 # Variables used for azdata cluster creation.
 #
