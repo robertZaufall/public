@@ -34,8 +34,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Kube version.
 #
-KUBE_DPKG_VERSION=1.20.11-00
-KUBE_VERSION=1.20.11
+KUBE_DPKG_VERSION=1.20.12-00
+KUBE_VERSION=1.20.12
 
 # Wait for 5 minutes for the cluster to be ready.
 #
@@ -43,10 +43,12 @@ TIMEOUT=600
 RETRY_INTERVAL=5
 
 # Variables for pulling dockers.
+# Repo list https://hub.docker.com/_/microsoft-mssql-server
+# Release notes https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-release-notes-2019
 #
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
-export DOCKER_TAG="2019-CU13-ubuntu-20.04"
+export DOCKER_TAG="2019-CU14-ubuntu-20.04"
 
 # Variables used for azdata cluster creation.
 #
