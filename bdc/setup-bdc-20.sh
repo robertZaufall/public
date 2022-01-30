@@ -33,6 +33,7 @@ export DEBIAN_FRONTEND=noninteractive
 # export REQUIREMENTS_LINK="https://aka.ms/azdata"
 
 # Kube version.
+# Kubenetes releases https://kubernetes.io/releases
 #
 KUBE_DPKG_VERSION=1.21.8-00
 KUBE_VERSION=1.21.8
