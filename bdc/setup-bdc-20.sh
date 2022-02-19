@@ -334,6 +334,15 @@ azdata bdc config replace -c kubeadm-custom/control.json -j ".spec.docker.imageT
 azdata bdc config replace -c kubeadm-custom/bdc.json -j "$.spec.resources.data-0.spec.replicas=1"
 azdata bdc config replace -c kubeadm-custom/control.json -j "spec.storage.data.className=$STORAGE_CLASS"
 azdata bdc config replace -c kubeadm-custom/control.json -j "spec.storage.logs.className=$STORAGE_CLASS"
+
+
+# cluster scope
+# azdata bdc config replace -c kubeadm-custom/bdc.json -j "bdc.telemetry.customerFeedback=false" (cannot for licensing mode Developer)
+
+# master pool resource scope: set collation, enable agent
+azdata bdc config replace -p kubeadm-custom/bdc.json -j '$.spec.resources.master.spec.settings.sql={"hadr.enabled": "false","mssql.collation": "Latin1_General_CI_AS","mssql.sqlagent.enabled": "true"}'
+
+
 azdata bdc create -c kubeadm-custom --accept-eula $ACCEPT_EULA
 echo "Big data cluster created." 
 
