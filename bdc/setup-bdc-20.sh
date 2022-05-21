@@ -35,8 +35,8 @@ export DEBIAN_FRONTEND=noninteractive
 # Kube version.
 # Kubenetes releases https://kubernetes.io/releases
 #
-KUBE_DPKG_VERSION=1.21.8-00
-KUBE_VERSION=1.21.8
+KUBE_DPKG_VERSION=1.21.12-00
+KUBE_VERSION=1.21.12
 
 # Wait for 5 minutes for the cluster to be ready.
 #
@@ -49,7 +49,7 @@ RETRY_INTERVAL=5
 #
 export DOCKER_REGISTRY="mcr.microsoft.com"
 export DOCKER_REPOSITORY="mssql/bdc"
-export DOCKER_TAG="2019-CU15-ubuntu-20.04"
+export DOCKER_TAG="2019-CU16-ubuntu-20.04"
 
 # Variables used for azdata cluster creation.
 #
